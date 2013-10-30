@@ -1,0 +1,20 @@
+<html lang="en" ng-app="xoryApp">
+<head>
+  <meta charset="utf-8">
+  <title>x or y</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="{{ url_for('static', filename='angular.js') }}"></script>
+  <script src="{{ url_for('static', filename='angular-route.js') }}"></script>
+  <script src="{{ url_for('static', filename='app/app.js') }}"></script>
+</head>
+<body>
+{% raw %}
+
+<div ng-view>
+Loading...
+</div>
+ 
+{% endraw %}
+</body>
+</html>

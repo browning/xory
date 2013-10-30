@@ -1,0 +1,15 @@
+{ 
+      "x" : 0,
+      "rightAnswers": 0,
+      "res": false,
+      "xchoice": "hop",
+      "ychoice": "strain",
+      "questions": [{
+        "question": "goldings!",
+        "answer": "x"
+      },
+      {
+        "question": "cascade",
+        "answer": "y"
+      }]
+} 
