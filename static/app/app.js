@@ -36,10 +36,18 @@ xoryApp.config(['$routeProvider',
         templateUrl: 'static/result.html',
         controller: 'QuestionCtrl'
       }).
+      when('/create', {
+        templateUrl: 'static/create.html',
+        controller: 'CreateCtrl'
+      }).
       otherwise({
         redirectTo: '/questions'
       });
   }]);
+
+function CreateCtrl($scope, $location) {
+
+}
 
 function QuestionCtrl($scope, $location, questionService) {
   $scope.qdata = questionService.qdata(function(results) {
