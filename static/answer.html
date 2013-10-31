@@ -1,11 +1,10 @@
-<div>
-{{qdata}}
+<div class="row">
 <hr />
-{{qdata.questions[qdata.x-1].question}} is a {{qdata.answer}}!
-<div ng-if="qdata.res == true">
+<h3 class="text-center">{{qdata.questions[qdata.x-1].question}} is a {{qdata.answer}}!</h3>
+<div class="text-center alert alert-success" ng-if="qdata.res == true">
         You got it right
 </div>
-<div ng-if="qdata.res != true">
+<div class="text-center alert alert-error" ng-if="qdata.res != true">
         You got it wrong
 </div>
 <a href="" ng-click="nextQuestion()">Next >></a>

@@ -1,10 +1,15 @@
-<div>
+<div class="row">
 <p>Question {{qdata.x+1}} of {{qdata.questions.length}}</p>
 
-<p>{{qdata.questions[qdata.x].question}}</p>
 
+<h3 class="text-center">{{qdata.questions[qdata.x].question}}</h3>
+
+<br />
+<h6 class="text-center"> Is it a...</h6>
+<br />
+<div class="text-center">
 <a href="" ng-click="answer1()">{{qdata.xchoice}}</a>
 OR 
 <a href="" ng-click="answer2()">{{qdata.ychoice}}</a>
-
+</div>
 </div>
