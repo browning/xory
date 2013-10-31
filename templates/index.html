@@ -9,8 +9,20 @@
   <script src="{{ url_for('static', filename='app/app.js') }}"></script>
 </head>
 <body>
-    <div class="container">
 
+
+
+    <div class="container">
+<br />
+    	<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">XORY</a>
+    <ul class="nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/create">Create your own</a></li>
+    </ul>
+  </div>
+</div>
 {% raw %}
 
 <div ng-view>
