@@ -46,7 +46,15 @@ xoryApp.config(['$routeProvider',
   }]);
 
 function CreateCtrl($scope, $location) {
+  $scope.data = {'name': '', 'xchoice': '', 'ychoice': '', questions: []}
 
+  $scope.add_question = function() {
+    $scope.data.questions.push({'question':'', 'answer':''})
+  }
+
+  $scope.create = function() { 
+    alert($scope.data);
+  }
 }
 
 function QuestionCtrl($scope, $location, questionService) {

@@ -1,3 +1,25 @@
-<div>
-Create your own x or y quiz here
+<div class="row">
+<form class="form-horizontal">
+
+<label>Name of quiz</label>
+<input type="text" ng-model="data.name" />
+
+<label>Choice X</label>
+<input type="text" ng-model="data.xchoice" />
+
+<label>Choice Y</label>
+<input type="text" ng-model="data.ychoice" />
+<br />
+<span ng-repeat="question in data.questions">
+	<label>Question</label>
+	<input type="text" ng-model="question.question" /><br />
+	<label>Correct answer ( x or y )</label>
+	<input type="text" ng-model="question.answer" /><br />
+</span>
+
+</form>
+
+<a href="" ng-click="add_question()">+++</a><br />
+<a href="" ng-click="create()">Create</a>
+
 </div>
