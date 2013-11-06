@@ -45,7 +45,7 @@ xoryApp.config(['$routeProvider',
       });
   }]);
 
-function CreateCtrl($scope, $location) {
+function CreateCtrl($scope, $location, $http) {
   $scope.data = {'name': '', 'xchoice': '', 'ychoice': '', questions: []}
 
   $scope.add_question = function() {
@@ -53,7 +53,11 @@ function CreateCtrl($scope, $location) {
   }
 
   $scope.create = function() { 
-    alert($scope.data);
+    $http({
+            method : 'POST',
+            url : '/save',
+            data : $scope.data
+        })
   }
 }
 
