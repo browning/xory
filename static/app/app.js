@@ -5,10 +5,10 @@ var xoryApp = angular.module('xoryApp', [
 xoryApp.factory('questionService', function($http) { 
   var result; 
   return {
-      qdata : function(callback) {
+      qdata : function(callback, name) {
           if (!result) {
              console.log('lodeit');
-              result = $http.get('static/question.json').success(callback);  
+              result = $http.get('quiz/' + name).success(callback);  
           }
           return result;
       },
@@ -65,12 +65,16 @@ function CreateCtrl($scope, $location, $http) {
   }
 }
 
-function QuestionCtrl($scope, $location, questionService) {
-  $scope.qdata = questionService.qdata(function(results) {
-        $scope.qdata = results;
-  }); 
-  
+function QuestionCtrl($scope, $location, questionService, $routeParams) {
+  $scope.name = $routeParams.name
 
+  $scope.qdata = questionService.qdata(function(results) {
+        results.quiz.x = 0;
+        results.quiz.rightAnswers = 0;
+        results.quiz.res = false,
+        $scope.qdata = results.quiz;
+  }, $scope.name); 
+  
   $scope.answer1 = function() {
     $location.path("answer")
     if ($scope.qdata.questions[$scope.qdata.x].answer == "x") {
