@@ -57,6 +57,10 @@ function CreateCtrl($scope, $location, $http) {
             method : 'POST',
             url : '/save',
             data : $scope.data
+        }).success(function(data, status, headers, config) {
+          // this callback will be called asynchronously
+          // when the response is available
+          $location.path("question/" + data)
         })
   }
 }
