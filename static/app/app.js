@@ -6,7 +6,7 @@ xoryApp.factory('questionService', function($http) {
   var result; 
   return {
       qdata : function(callback, name) {
-          if (!result) {
+          if (!result || name) {
              console.log('lodeit');
               result = $http.get('quiz/' + name).success(callback);  
           }
@@ -25,6 +25,10 @@ xoryApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/question/:name', {
+        templateUrl: 'static/question.html',
+        controller: 'QuestionCtrl'
+      }).
+      when('/question/', {
         templateUrl: 'static/question.html',
         controller: 'QuestionCtrl'
       }).
@@ -110,7 +114,7 @@ function QuestionCtrl($scope, $location, questionService, $routeParams) {
       $location.path("result")
     }
     else {
-      $location.path("question/:name")
+      $location.path("question/")
     }
   }
 };
