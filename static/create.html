@@ -1,25 +1,34 @@
 <div class="row">
-<form class="form-horizontal">
+<form role="form">
 
-<label>Name of quiz</label>
-<input type="text" ng-model="data.name" />
+<div class="form-group">
+<label>Quiz name</label>
+<input type="text" class="form-control" placeholder="Quiz name" ng-model="data.name" />
+</div>
 
+<div class="form-group">
 <label>Choice X</label>
-<input type="text" ng-model="data.xchoice" />
+<input type="text" class="form-control" placeholder="Choice X" ng-model="data.xchoice" />
+</div>
 
+<div class="form-group">
 <label>Choice Y</label>
-<input type="text" ng-model="data.ychoice" />
-<br />
+<input type="text" class="form-control" placeholder="Choice Y" ng-model="data.ychoice" />
+</div>
 <span ng-repeat="question in data.questions">
+<div class="form-group">
+<fieldset>
 	<label>Question</label>
-	<input type="text" ng-model="question.question" /><br />
+	<input type="text" class="form-control" ng-model="question.question" /><br />
 	<label>Correct answer ( x or y )</label>
-	<input type="text" ng-model="question.answer" /><br />
+	<input type="text" class="form-control" ng-model="question.answer" /><br />
+	</div>
+	</fieldset>
 </span>
 
+<button type="button" class="btn btn-warning" ng-click="add_question()">Add a question</button>
+<button type="button" class="btn btn-success" ng-click="create()">Create quiz</button>
 </form>
 
-<a href="" ng-click="add_question()">+++</a><br />
-<a href="" ng-click="create()">Create</a>
 
 </div>
