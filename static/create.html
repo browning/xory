@@ -17,13 +17,20 @@
 </div>
 <span ng-repeat="question in data.questions">
 <div class="form-group">
-<fieldset>
+<hr />
 	<label>Question</label>
 	<input type="text" class="form-control" ng-model="question.question" /><br />
 	<label>Correct answer ( x or y )</label>
-	<input type="text" class="form-control" ng-model="question.answer" /><br />
+	<label class="radio">
+	<input type="radio" class="form-control" ng-model="question.answer" value="x">
+	{{data.xchoice}}
+	</label>
+	<label class="radio">
+	<input type="radio" class="form-control" ng-model="question.answer" value="y">
+	{{data.ychoice}}
+	</label>
+
 	</div>
-	</fieldset>
 </span>
 
 <button type="button" class="btn btn-warning" ng-click="add_question()">Add a question</button>
