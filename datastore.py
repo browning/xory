@@ -12,7 +12,7 @@ def save_quiz(json_data):
 		client = MongoClient(os.environ['MONGOHQ_URL'])
 	else:
 		client = MongoClient()
-	db = client.quiz_database
+	db = client.get_default_database()
 	quizzes = db.quizzes
 	return str(quizzes.insert(json.loads(json_data)))
 
@@ -22,6 +22,6 @@ def load_quiz(mongo_id):
 	else:
 		client = MongoClient()
 	client = MongoClient()
-	db = client.quiz_database
+	db = client.get_default_database()
 	quizzes = db.quizzes
 	return quizzes.find_one({'_id': ObjectId(mongo_id)})
